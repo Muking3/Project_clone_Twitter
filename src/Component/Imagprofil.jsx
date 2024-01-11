@@ -1,7 +1,7 @@
-export default function Imagprofil({ src_img }) {
+export default function Imagprofil({width, height, src_img }) {
     return (
         <>
-            <div className='w-[8%] h-[8%]'>
+            <div className={`${width} ${height}`}>
                 <img src={src_img} alt="Photo de profil" className='rounded-[100%]' />
             </div>
         </>

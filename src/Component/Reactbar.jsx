@@ -6,8 +6,9 @@ export default function Reactbar({ icon, type, r, t, f }) {
     else if (type === 1) {
         number = t
     }
-    else if (type === 2) {number = f
-}
+    else if (type === 2) {
+        number = f
+    }
     else {
         number = null
     }
