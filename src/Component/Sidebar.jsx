@@ -4,7 +4,7 @@ import { svg } from "./Svg_icon"
 export default function Sidebar() {
     return (
         <>
-            <div className='w-[22%] h-screen mt-[4px] mx-[12px]'>
+            <div className='w-[22%] mt-[4px] mx-[12px]'>
                 <div className='fixed'>
                     <ul>{
                         svg.map(nav => <Linknav key={nav.id} icon={nav.icon} text={nav.text} />)
