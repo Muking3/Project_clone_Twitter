@@ -6,9 +6,9 @@ export default function Trends() {
             <div className='w-[28%] ml-[30px] mr-[10px] mt-[6px]'>
                 <div className='sticky top-2'>
                     <Search />
-                    <div className='rounded-[15px] bg-[rgb(32,35,39)] mb-[16px]'>
+                    <div className='rounded-[15px] bg-[#202327] mb-[16px]'>
                         <div className='flex justify-between items-center'>
-                            <span className='my-[12px] ml-[16px] text-xl font-extrabold'>Trends for you</span>
+                            <h3 className='my-[12px] ml-[16px] text-xl font-extrabold'>Trends for you</h3>
                             <div className='pr-[30px]'>
                                 <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.0001 7.21C8.91008 7.21 7.21008 8.91 7.21008 11C7.21008 13.09 8.91008 14.79 11.0001 14.79C13.0901 14.79 14.7901 13.09 14.7901 11C14.7901 8.91 13.0901 7.21 11.0001 7.21ZM11.0001 13.29C9.73808 13.29 8.71008 12.264 8.71008 11C8.71008 9.736 9.74008 8.71 11.0001 8.71C12.2601 8.71 13.2901 9.736 13.2901 11C13.2901 12.264 12.2621 13.29 11.0001 13.29Z" fill="#D9D9D9" />
@@ -34,29 +34,27 @@ export default function Trends() {
                             <span className='text-[#1D9BF0] font-bold'>Show more</span>
                         </div>
                     </div>
-                    <div className='rounded-[15px] bg-[rgb(32,35,39)]'>
-                        <div>
-                            <h3 className='py-[12px] ml-[16px] text-xl font-extrabold'>Who to follow</h3>
-                            <div className='flex gap-[7%] px-[16px] py-[12px] text-[15px]'>
-                                <div className='w-[15.5%] h-[15.5%] mt-[4px]'>
-                                    <img src="src/assets/image 1.svg" alt="Photo de profil" className='rounded-[100%]' />
-                                </div>
-                                <div className='w-[77.5%] flex items-center justify-between'>
-                                    <div>
-                                        <div className='flex items-center'>
-                                            <span className='pr-[2px]'>CNN</span>
-                                            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M17.75 9.41667C17.75 8.1 17.0208 6.95833 15.96 6.41667C16.0883 6.05417 16.1583 5.6625 16.1583 5.25C16.1583 3.40833 14.7333 1.91833 12.9767 1.91833C12.585 1.91833 12.21 1.98833 11.8633 2.12667C11.3483 1.0125 10.2583 0.25 9 0.25C7.74166 0.25 6.65333 1.01417 6.13583 2.125C5.78999 1.9875 5.41416 1.91667 5.02249 1.91667C3.26416 1.91667 1.84083 3.40833 1.84083 5.25C1.84083 5.66167 1.90999 6.05333 2.03833 6.41667C0.978327 6.95833 0.249161 8.09833 0.249161 9.41667C0.249161 10.6625 0.900828 11.7483 1.86749 12.3217C1.85083 12.4633 1.84083 12.605 1.84083 12.75C1.84083 14.5917 3.26416 16.0833 5.02249 16.0833C5.41416 16.0833 5.78916 16.0117 6.13499 15.875C6.65166 16.9867 7.73999 17.75 8.99916 17.75C10.2592 17.75 11.3475 16.9867 11.8633 15.875C12.2092 16.0108 12.5842 16.0817 12.9767 16.0817C14.735 16.0817 16.1583 14.59 16.1583 12.7483C16.1583 12.6033 16.1483 12.4617 16.1308 12.3208C17.0958 11.7483 17.75 10.6625 17.75 9.4175V9.41667ZM12.2367 6.63833L8.625 12.055C8.50416 12.2358 8.30666 12.3333 8.10416 12.3333C7.98499 12.3333 7.86416 12.3 7.75749 12.2283L7.66166 12.15L5.64916 10.1375C5.40499 9.89333 5.40499 9.4975 5.64916 9.25417C5.89333 9.01083 6.28916 9.00917 6.53249 9.25417L8.00749 10.7267L11.195 5.94333C11.3867 5.65583 11.775 5.58 12.0617 5.77083C12.35 5.9625 12.4283 6.35083 12.2367 6.6375V6.63833Z" fill="#D9D9D9" />
-                                            </svg>
-                                        </div>
-                                        <div className="text-[#6E767D]">
-                                            <a href="#">@CNN</a>
-                                            <span className='px-[4px]'>.</span>
-                                            <a href="#">7m</a>
-                                        </div>
+                    <div className='rounded-[15px] bg-[#202327]'>
+                        <h3 className='py-[12px] ml-[16px] text-xl font-extrabold'>Who to follow</h3>
+                        <div className='flex gap-[7%] px-[16px] py-[12px] text-[15px]'>
+                            <div className='w-[15.5%] h-[15.5%] mt-[4px]'>
+                                <img src="src/assets/image 1.svg" alt="Photo de profil" className='rounded-[100%]' />
+                            </div>
+                            <div className='w-[77.5%] flex items-center justify-between'>
+                                <div>
+                                    <div className='flex items-center'>
+                                        <span className='pr-[2px]'>CNN</span>
+                                        <svg width="17" height="17" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.75 9.41667C17.75 8.1 17.0208 6.95833 15.96 6.41667C16.0883 6.05417 16.1583 5.6625 16.1583 5.25C16.1583 3.40833 14.7333 1.91833 12.9767 1.91833C12.585 1.91833 12.21 1.98833 11.8633 2.12667C11.3483 1.0125 10.2583 0.25 9 0.25C7.74166 0.25 6.65333 1.01417 6.13583 2.125C5.78999 1.9875 5.41416 1.91667 5.02249 1.91667C3.26416 1.91667 1.84083 3.40833 1.84083 5.25C1.84083 5.66167 1.90999 6.05333 2.03833 6.41667C0.978327 6.95833 0.249161 8.09833 0.249161 9.41667C0.249161 10.6625 0.900828 11.7483 1.86749 12.3217C1.85083 12.4633 1.84083 12.605 1.84083 12.75C1.84083 14.5917 3.26416 16.0833 5.02249 16.0833C5.41416 16.0833 5.78916 16.0117 6.13499 15.875C6.65166 16.9867 7.73999 17.75 8.99916 17.75C10.2592 17.75 11.3475 16.9867 11.8633 15.875C12.2092 16.0108 12.5842 16.0817 12.9767 16.0817C14.735 16.0817 16.1583 14.59 16.1583 12.7483C16.1583 12.6033 16.1483 12.4617 16.1308 12.3208C17.0958 11.7483 17.75 10.6625 17.75 9.4175V9.41667ZM12.2367 6.63833L8.625 12.055C8.50416 12.2358 8.30666 12.3333 8.10416 12.3333C7.98499 12.3333 7.86416 12.3 7.75749 12.2283L7.66166 12.15L5.64916 10.1375C5.40499 9.89333 5.40499 9.4975 5.64916 9.25417C5.89333 9.01083 6.28916 9.00917 6.53249 9.25417L8.00749 10.7267L11.195 5.94333C11.3867 5.65583 11.775 5.58 12.0617 5.77083C12.35 5.9625 12.4283 6.35083 12.2367 6.6375V6.63833Z" fill="#D9D9D9" />
+                                        </svg>
                                     </div>
-                                    <button type="button" className='rounded-[50px] bg-white w-[79px] h-[31px] text-sm text-black'>Follow</button>
+                                    <div className="text-[#6E767D]">
+                                        <a href="#">@CNN</a>
+                                        <span className='px-[4px]'>.</span>
+                                        <a href="#">7m</a>
+                                    </div>
                                 </div>
+                                <button type="button" className='rounded-[50px] bg-white w-[79px] h-[31px] text-sm text-black'>Follow</button>
                             </div>
                         </div>
                         <div className='p-[16px]'>

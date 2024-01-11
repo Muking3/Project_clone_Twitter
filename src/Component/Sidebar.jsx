@@ -1,3 +1,4 @@
+import Button from "./Button"
 import Linknav from "./Linknav"
 import { svg } from "./Svg_icon"
 
@@ -9,7 +10,7 @@ export default function Sidebar() {
                     <ul>{
                         svg.map(nav => <Linknav key={nav.id} icon={nav.icon} text={nav.text} />)
                     }</ul>
-                    <button type="button" className='py-[16px] text-[17px] font-bold rounded-[50px] bg-[#1D9BF0] w-[225px]'>Tweet</button>
+                    <Button width="w-[225px]" height="h-[52px]" fontsize="text-[17px]" text="Tweet" />
                 </div>
             </div>
         </>
