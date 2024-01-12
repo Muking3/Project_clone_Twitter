@@ -1,5 +1,17 @@
 export const ex_tweet = [
     {
+        "author_avatar": "https://pbs.twimg.com/profile_images/1689515579558830080/O7fV9Zv6_400x400.jpg",
+        "source": "Trump D.",
+        "date": 1603037689000,
+        "favorites": 62414,
+        "id": "1317861704819118080",
+        "isVerified": false,
+        "replies": "258",
+        "retweets": 16811,
+        "image":"https://pbs.twimg.com/media/GDnytFMXEAAoCOx?format=jpg&name=small",
+        "text": `J'ai officiellement reçu du greffier de la Cour constitutionnelle, la copie de l’arrêt sous RCE 0016 du 9/01/2024 portant proclamation des résultats définitifs de la présidentielle du 20/12/2023.Retrouvons nous le au stade des martyrs pour la cérémonie d'investiture. 🇨🇩🇨🇩🇨🇩`
+    },
+    {
         "author_avatar": "src/assets/image 1.svg",
         "source": "CNN",
         "date": 1604299903000,
@@ -63,7 +75,7 @@ export const ex_tweet = [
         "source": "Trump D.",
         "date": 1603037689000,
         "favorites": 62414,
-        "id": "1317861704819118080",
+        "id": "131786180",
         "isVerified": false,
         "replies": "258",
         "retweets": 16811,
@@ -184,17 +196,6 @@ export const ex_tweet = [
         "retweets": "9563",
         "text": "...a cheerleader for NAFTA – sending your auto Jobs to Mexico. He voted for China’s entry into the World Trade Organization – gutting your industries to finance China’s rise. HALF of all Michigan auto manufacturing jobs were ELIMINATED after the Biden-Backed NAFTA and China...",
         "image": "https://picsum.photos/200?random=1322252819299135488"
-    },
-    {
-        "author_avatar": "https://picsum.photos/200?random=1603037689000",
-        "source": "Trump D.",
-        "date": 1603037689000,
-        "favorites": 62414,
-        "id": "1317861704819118080",
-        "isVerified": false,
-        "replies": "258",
-        "retweets": 16811,
-        "text": "Not my Wall, which will soon be finished (and Mexico will pay for the Wall!). Totally unrelated, but I think Steve will be just fine. By the way, is this the same job hopping Tim O’Brien that headed Mini Mike Bloomberg’s humiliating 2 Billion Dollar Presidential run? Debate prep! https://t.co/cQfEtszRrB"
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1602377246000",
