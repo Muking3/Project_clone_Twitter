@@ -17,10 +17,15 @@ export default function Trends() {
                             </div>
                         </div>
                         <Trendsliste />
+                        <Trendsliste />
+                        <Trendsliste />
+                        <Trendsliste />
                         <Show_more />
                     </div>
                     <div className='rounded-[15px] bg-[#202327]'>
                         <h3 className='py-[12px] ml-[16px] text-xl font-extrabold'>Who to follow</h3>
+                        <Account_follow />
+                        <Account_follow />
                         <Account_follow />
                         <Show_more />
                     </div>
