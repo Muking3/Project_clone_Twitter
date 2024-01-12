@@ -16,7 +16,7 @@ export default function Reactbar({ icon, type, r, t, f }) {
         <>
             <div className='flex w-[22.5%] cursor-pointer'>
                 <div>{icon}</div>
-                <span className='px-[12px]'>{number}</span>
+                <span className='px-[12px] text-[#6E767D]'>{number}</span>
             </div>
         </>
     )

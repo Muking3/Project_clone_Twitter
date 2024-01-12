@@ -1,5 +1,16 @@
 export const ex_tweet = [
     {
+        "author_avatar": "https://pbs.twimg.com/profile_images/1112323410837815296/wxhDfc5D_400x400.jpg",
+        "source": "Out Of Context Football",
+        "date": 650,
+        "favorites": 62414,
+        "id": "1317861704819118080",
+        "isVerified": false,
+        "replies": "258",
+        "retweets": 16811,
+        "image": "https://pbs.twimg.com/media/GDk4uqFW4AADR2p?format=jpg&name=medium",
+    }, 
+    {
         "author_avatar": "https://pbs.twimg.com/profile_images/1689515579558830080/O7fV9Zv6_400x400.jpg",
         "source": "Trump D.",
         "date": 1603037689000,
@@ -8,7 +19,7 @@ export const ex_tweet = [
         "isVerified": false,
         "replies": "258",
         "retweets": 16811,
-        "image":"https://pbs.twimg.com/media/GDnytFMXEAAoCOx?format=jpg&name=small",
+        "image": "https://pbs.twimg.com/media/GDnytFMXEAAoCOx?format=jpg&name=small",
         "text": `J'ai officiellement reçu du greffier de la Cour constitutionnelle, la copie de l’arrêt sous RCE 0016 du 9/01/2024 portant proclamation des résultats définitifs de la présidentielle du 20/12/2023.Retrouvons nous le au stade des martyrs pour la cérémonie d'investiture. 🇨🇩🇨🇩🇨🇩`
     },
     {

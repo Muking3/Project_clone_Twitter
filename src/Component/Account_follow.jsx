@@ -1,4 +1,5 @@
 import { Account_img, Account_src } from "./Account"
+import Button from "./Button"
 import Imagprofil from "./Imagprofil"
 
 export default function Account_follow() {
@@ -13,7 +14,7 @@ export default function Account_follow() {
                         </div>
                         <Account_src id_profil="CNN" />
                     </div>
-                    <button type="button" className='rounded-[50px] bg-white w-[79px] h-[31px] text-sm text-black'>Follow</button>
+                    <Button width="w-[79px]" height="h-[31px]" fontsize="text-sm" opacity="text-black" text="Follow" bg='bg-white'/>
                 </div>
             </div>
         </>
