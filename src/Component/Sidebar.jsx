@@ -19,7 +19,7 @@ export default function Sidebar() {
                             <div className='w-[77.5%] flex justify-between items-center'>
                                 <div>
                                     <div className='flex items-center'>
-                                        <Account_img name_profil="CNN" access="" />
+                                        <Account_img name_profil="Muking" access="secure" />
                                     </div>
                                     <Account_src id_profil="Muking00#" />
                                 </div>

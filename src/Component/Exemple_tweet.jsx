@@ -1,6 +1,7 @@
 export const ex_tweet = [
     {
         "author_avatar": "https://pbs.twimg.com/profile_images/1112323410837815296/wxhDfc5D_400x400.jpg",
+        "author_name": "Out Of Context Football",
         "source": "Out Of Context Football",
         "date": 650,
         "favorites": 62414,
@@ -10,9 +11,10 @@ export const ex_tweet = [
         "retweets": 16811,
         "text": "bon",
         "image": "https://pbs.twimg.com/media/GDk4uqFW4AADR2p?format=jpg&name=medium",
-    }, 
+    },
     {
         "author_avatar": "https://pbs.twimg.com/profile_images/1689515579558830080/O7fV9Zv6_400x400.jpg",
+        "author_name": "Trump D.",
         "source": "Trump D.",
         "date": 1603037689000,
         "favorites": 62414,
@@ -25,6 +27,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "src/assets/image 1.svg",
+        "author_name": "CNN",
         "source": "CNN",
         "date": 1604299903000,
         "favorites": "92746",
@@ -37,6 +40,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604299903000",
+        "author_name": "Twitter",
         "source": "Twitter",
         "date": 1604299903000,
         "favorites": "92746",
@@ -48,6 +52,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1609942590000",
+        "author_name": "Apple",
         "source": "Apple",
         "date": 1609942590000,
         "favorites": "396603",
@@ -60,6 +65,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604231375000",
+        "author_name": "Twitter for iPhone",
         "source": "Twitter for iPhone",
         "date": 1604231375000,
         "favorites": "124689",
@@ -72,6 +78,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604084613000",
+        "author_name": "CNN",
         "source": "CNN",
         "date": 1604084613000,
         "favorites": "44842",
@@ -84,6 +91,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1603037689000",
+        "author_name": "Trump D.",
         "source": "Trump D.",
         "date": 1603037689000,
         "favorites": 62414,
@@ -95,6 +103,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1602377246000",
+        "author_name": "Lauraine L.",
         "source": "Lauraine L.",
         "date": 1602377246000,
         "favorites": 34952,
@@ -107,6 +116,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1601996447000",
+        "author_name": "Mexico City",
         "source": "Mexico City",
         "date": 1601996447000,
         "favorites": 58201,
@@ -118,6 +128,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1554075712000",
+        "author_name": "New York Times",
         "source": "New York Times",
         "date": 1554075712000,
         "favorites": 58201,
@@ -129,6 +140,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604231375000",
+        "author_name": "Twitter for iPhone",
         "source": "Twitter for iPhone",
         "date": 1601996447000,
         "favorites": 58201,
@@ -140,6 +152,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1548956601000",
+        "author_name": "Samsung",
         "source": "Samsung",
         "date": 1601996447000,
         "favorites": 58201,
@@ -152,6 +165,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "src/assets/image 1.svg",
+        "author_name": "CNN",
         "source": "CNN",
         "date": 1604299903000,
         "favorites": "92746",
@@ -164,6 +178,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604299903000",
+        "author_name": "Twitter",
         "source": "Twitter",
         "date": 1604299903000,
         "favorites": "92746",
@@ -175,6 +190,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1609942590000",
+        "author_name": "Apple",
         "source": "Apple",
         "date": 1609942590000,
         "favorites": "396603",
@@ -187,6 +203,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604231375000",
+        "author_name": "Twitter for iPhone",
         "source": "Twitter for iPhone",
         "date": 1604231375000,
         "favorites": "124689",
@@ -199,6 +216,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604084613000",
+        "author_name": "CNN",
         "source": "CNN",
         "date": 1604084613000,
         "favorites": "44842",
@@ -211,6 +229,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1602377246000",
+        "author_name": "Lauraine L.",
         "source": "Lauraine L.",
         "date": 1602377246000,
         "favorites": 34952,
@@ -223,6 +242,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1601996447000",
+        "author_name": "Mexico City",
         "source": "Mexico City",
         "date": 1601996447000,
         "favorites": 58201,
@@ -234,6 +254,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1554075712000",
+        "author_name": "New York Times",
         "source": "New York Times",
         "date": 1554075712000,
         "favorites": 58201,
@@ -245,6 +266,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1604231375000",
+        "author_name": "Twitter for iPhone",
         "source": "Twitter for iPhone",
         "date": 1601996447000,
         "favorites": 58201,
@@ -256,6 +278,7 @@ export const ex_tweet = [
     },
     {
         "author_avatar": "https://picsum.photos/200?random=1548956601000",
+        "author_name": "Samsung",
         "source": "Samsung",
         "date": 1601996447000,
         "favorites": 58201,

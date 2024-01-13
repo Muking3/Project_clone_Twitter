@@ -12,13 +12,14 @@ export default function Timeline() {
     const [valuetext, setValuetext] = useState()
     const handleTweet = (e) => {
         const value_textarea = e.target.value.trim()
-        if (value_textarea.length === 0) {
+        if (value_textarea.length === 0 || value_textarea.length > 100) {
             setValuetext()
         }
         else {
             setValuetext(e.target.value)
             const text_write = {
                 "author_avatar": "src/assets/Capture d’écran du 2024-01-11 22-28-49.png",
+                "author_name": "Muking00#",
                 "source": "Muking",
                 "date": 650,
                 "favorites": 62414,
@@ -27,7 +28,6 @@ export default function Timeline() {
                 "replies": "258",
                 "retweets": 16811,
                 "text": e.target.value,
-                // "image": src_post,
             }
             setTweet(text_write)
         }
@@ -37,9 +37,6 @@ export default function Timeline() {
             ex_tweet.unshift(tweet)
             setIds(x => x + 1)
             setValuetext("")
-        }
-        else {
-            alert('Le champs tweet est vide');
         }
     }
     return (
@@ -60,7 +57,7 @@ export default function Timeline() {
                             <div className='flex justify-between items-center mt-[16px]'>
                                 <div className='flex gap-[14px]'>
                                     {
-                                        svg_timeline.map(editor => <Twite_editor key={editor.id} icon={editor.icon} />)
+                                        svg_timeline.map(editor => <Twite_editor key={editor.id} icon={editor.icon} type={editor.id} />)
                                     }
                                 </div>
                                 <Button width="w-[79px]" height="h-[36px]" fontsize="text-[15px]" opacity={valuetext ? "opacity-100" : "opacity-50"} text="Tweet" bg="bg-[#1D9BF0]" handlefunction={handlePost} />
@@ -69,9 +66,9 @@ export default function Timeline() {
                     </div>
                 </div>
                 <ul>{
-                    ex_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.source} id_profil={tweet.source}
+                    ex_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.source} id_profil={tweet.author_name}
                         text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar}
-                        replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} />)
+                        replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} verified={tweet.isVerified}/>)
                 }</ul>
                 <Tweet />
             </div>

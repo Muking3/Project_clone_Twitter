@@ -4,8 +4,8 @@ export function Account_img({ name_profil, access }) {
     return (
         <>
             <span className='pr-[2px] font-bold'>{name_profil}</span>
-            {access === "ok" && svg_certified}
-            {access !== "ok" && svg_secure}
+            {access && access !== "secure" && svg_certified}
+            {access === "secure" && svg_secure}
         </>
     )
 }

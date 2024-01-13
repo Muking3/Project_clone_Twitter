@@ -1,5 +1,6 @@
 export function PHOTO(file) {
     let fileType = file.type
+    let fileSource = ""
     let tableRegex = /png$|jpe?g$/
     if (!tableRegex.test(fileType)) {
         alert("Format de l'image incorrect")

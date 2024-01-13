@@ -4,7 +4,7 @@ import Reactbar from "./Reactbar"
 import { svg_react } from "./Svg_icon"
 
 
-export default function Tweet({ src_profil, name_profil, id_profil, text, src_imgpst, replie, retweet, favorite }) {
+export default function Tweet({ src_profil, name_profil, id_profil, text, src_imgpst, replie, retweet, favorite, verified }) {
     return (
         <>
             {id_profil && <div className='border-b-[1px] border-[#2F3336]'>
@@ -12,7 +12,7 @@ export default function Tweet({ src_profil, name_profil, id_profil, text, src_im
                     <Imagprofil src_img={src_profil} width="w-[8%]" height="h-[8%]" />
                     <div className='w-[88%]'>
                         <div className='flex items-center'>
-                            <Account_img name_profil={name_profil} access="ok"/>
+                            <Account_img name_profil={name_profil} access={verified} />
                             <Account_src id_profil={id_profil} classe='px-[4px]' />
                         </div>
                         <p className='pt-[5px]'>{text}</p>
