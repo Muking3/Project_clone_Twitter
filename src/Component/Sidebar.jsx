@@ -13,8 +13,8 @@ export default function Sidebar() {
                         svg.map(nav => <Linknav key={nav.id} icon={nav.icon} text={nav.text} />)
                     }</ul>
                     <Button width="w-[225px]" height="h-[52px]" fontsize="text-[17px]" text="Tweet" bg="bg-[#1D9BF0]" />
-                    <div className="fixed bottom-0 top-[256]">
-                        <div className='flex gap-[7%] mb-[12px] mt-[60%] text-[15px] w-full'>
+                    <div className="fixed bottom-2 w-[272.4px]">
+                        <div className='flex gap-[7%] text-[15px]'>
                             <Imagprofil src_img="src/assets/Capture d’écran du 2024-01-11 22-28-49.png" alt="Photo de profil" width="w-[20%]" height="h-[20%]" />
                             <div className='w-[77.5%] flex justify-between items-center'>
                                 <div>
@@ -25,7 +25,6 @@ export default function Sidebar() {
                                 </div>
                                 {svg_more_btn}
                             </div>
-
                         </div>
                     </div>
                 </div>

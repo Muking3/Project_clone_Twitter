@@ -24,9 +24,9 @@ export default function Trends() {
                     </div>
                     <div className='rounded-[15px] bg-[#202327]'>
                         <h3 className='py-[12px] ml-[16px] text-xl font-extrabold'>Who to follow</h3>
-                        <Account_follow />
-                        <Account_follow />
-                        <Account_follow />
+                        <Account_follow img="src/assets/image 1 (1).svg" name="New York Times" profil="nytimes"/>
+                        <Account_follow img="src/assets/image 1.svg"  name="CNN" profil="CNN"/>
+                        <Account_follow img="src/assets/Profile-Photo.svg"  name="Twitter" profil="Twitter"/>
                         <Show_more />
                     </div>
                 </div>

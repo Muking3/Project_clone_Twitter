@@ -3,6 +3,7 @@ import Imagprofil from "./Imagprofil"
 import Reactbar from "./Reactbar"
 import { svg_react } from "./Svg_icon"
 
+
 export default function Tweet({ src_profil, name_profil, id_profil, text, src_imgpst, replie, retweet, favorite }) {
     return (
         <>

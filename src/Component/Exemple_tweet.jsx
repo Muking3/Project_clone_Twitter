@@ -8,6 +8,7 @@ export const ex_tweet = [
         "isVerified": false,
         "replies": "258",
         "retweets": 16811,
+        "text": "bon",
         "image": "https://pbs.twimg.com/media/GDk4uqFW4AADR2p?format=jpg&name=medium",
     }, 
     {
@@ -15,7 +16,7 @@ export const ex_tweet = [
         "source": "Trump D.",
         "date": 1603037689000,
         "favorites": 62414,
-        "id": "1317861704819118080",
+        "id": "19118080",
         "isVerified": false,
         "replies": "258",
         "retweets": 16811,
