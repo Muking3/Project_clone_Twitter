@@ -70,7 +70,6 @@ export default function Timeline() {
                         text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar}
                         replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} verified={tweet.isVerified}/>)
                 }</ul>
-                <Tweet />
             </div>
         </>
     )
