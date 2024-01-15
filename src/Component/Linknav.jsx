@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 export default function Linknav({ icon, text, functionnav, type, way, fontbold }) {
     if (type === 0 || type === 1) {
-        way = '/'
+        way = '/Project_clone_Twitter/'
     }
     else if (type === 7) {
-        way = '/username'
+        way = '/Project_clone_Twitter/username'
     }
     return (
         <>
