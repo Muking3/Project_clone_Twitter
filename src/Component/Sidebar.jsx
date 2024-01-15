@@ -34,8 +34,8 @@ export default function Sidebar() {
                     </div>
                 </div>
                 <Routes>
-                    <Route path="/Project_clone_Twitter/" element={<Timeline />} />
-                    <Route path="/Project_clone_Twitter/username" element={<Profil />} />
+                    <Route path="/" element={<Timeline />} />
+                    <Route path="/username" element={<Profil />} />
                 </Routes>
             </Router>
         </>
