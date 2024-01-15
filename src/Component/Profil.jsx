@@ -13,7 +13,7 @@ export default function Profil() {
                     <img src="https://github.com/Muking3/Project_clone_Twitter/blob/develop/src/assets/voqA4xci_400x400.png?raw=true" alt="Photo de profil" className="rounded-[100%] 
                 border-[5px] border-black w-[150px] h-[150px]"/>
                 </div>
-                <img src="https://github.com/Muking3/Project_clone_Twitter/blob/develop/src/assets/james-harrison-vpOeXr5wmR4-unsplash.jpg?raw=true" alt="Image d'un ordinateur portable avec du code z-0" />
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29kZXxlbnwwfHwwfHx8MA%3D%3D" alt="Image d'un ordinateur portable avec du code z-0" />
                 <div className="w-11/12 m-auto pt-24">
                     <h3 className='text-xl font-extrabold'>Muking</h3>
                     <p className="text-[13px] text-[#6E767D]">Muking00#</p>
