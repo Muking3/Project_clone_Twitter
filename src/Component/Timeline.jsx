@@ -18,7 +18,7 @@ export default function Timeline() {
         else {
             setValuetext(e.target.value)
             const text_write = {
-                "author_avatar": "src/assets/Capture d’écran du 2024-01-11 22-28-49.png",
+                "author_avatar": "src/assets/voqA4xci_400x400.png",
                 "author_name": "Muking00#",
                 "source": "Muking",
                 "date": 650,
@@ -37,6 +37,7 @@ export default function Timeline() {
             ex_tweet.unshift(tweet)
             setIds(x => x + 1)
             setValuetext("")
+            console.log(ex_tweet);
         }
     }
     return (
@@ -50,7 +51,7 @@ export default function Timeline() {
                 </div>
                 <div className='border-b-[1px] border-[#2F3336]'>
                     <div className='flex gap-[4%] px-[16px] py-[12px]'>
-                        <Imagprofil src_img="src/assets/Capture d’écran du 2024-01-11 22-28-49.png" width="w-[8%]" height="h-[8%]" />
+                        <Imagprofil src_img="src/assets/voqA4xci_400x400.png" width="w-[8%]" height="h-[8%]" />
                         <div className="w-[88%]">
                             <textarea className='bg-black mt-[5px] resize-none w-full outline-none placeholder:text-[#6E767D] text-[20px]'
                                 placeholder="What's happending?" value={valuetext} onChange={handleTweet}></textarea>

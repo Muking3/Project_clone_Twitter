@@ -23,7 +23,7 @@ export default function Tweet({ src_profil, name_profil, id_profil, text, src_im
                         </div>
                         <div className='flex pt-[12px] gap-[10%]'>
                             {
-                                svg_react.map(react => <Reactbar key={react.id} icon={react.icon} type={react.id} r={replie} t={retweet} f={favorite} />)
+                                svg_react.map(react => <Reactbar key={react.id} icon={react.icon} type={react.id} rePlie={replie} reTweet={retweet} faVorite={favorite} />)
                             }
                         </div>
                     </div>

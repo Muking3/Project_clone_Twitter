@@ -14,9 +14,9 @@ export function Account_src({ id_profil, classe }) {
     return (
         <>
             <div className="text-[#6E767D]">
-                <a href="#" className={classe}>@{id_profil}</a>
+                <span href="#" className={classe}>@{id_profil}</span>
                 <span className='px-[4px]'>.</span>
-                <a href="#">7m</a>
+                <span href="#">7m</span>
             </div>
         </>
     )
