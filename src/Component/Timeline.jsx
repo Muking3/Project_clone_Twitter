@@ -51,7 +51,7 @@ export default function Timeline() {
                 </div>
                 <div className='border-b-[1px] border-[#2F3336]'>
                     <div className='flex gap-[4%] px-[16px] py-[12px]'>
-                        <Imagprofil src_img="src/assets/voqA4xci_400x400.png" width="w-[8%]" height="h-[8%]" />
+                        <Imagprofil src_img="https://github.com/Muking3/Project_clone_Twitter/blob/develop/src/assets/voqA4xci_400x400.png?raw=true" width="w-[8%]" height="h-[8%]" />
                         <div className="w-[88%]">
                             <textarea className='bg-black mt-[5px] resize-none w-full outline-none placeholder:text-[#6E767D] text-[20px]'
                                 placeholder="What's happending?" value={valuetext} onChange={handleTweet}></textarea>
