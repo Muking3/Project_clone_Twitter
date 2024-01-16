@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import { Account_img, Account_src } from "./Account"
 import Button from "./Button"
 import Imagprofil from "./Imagprofil"
@@ -11,25 +11,27 @@ export default function Sidebar() {
     return (
         <>
             <Router>
-                <div className='w-[22%] mt-[4px] mx-[12px]'>
-                    <div className='sticky top-4'>
-                        <ul className="flex flex-col gap-[12px] mb-[15px]">{
+                <div className="hidden tablet:block desktop:block tablet:w-[10%] desktop:w-[22%] mt-1 mx-3">
+                    <div className="sticky top-4">
+                        <ul className="flex justify-center flex-col gap-3 mb-3.5">{
                             svg.map(nav => <Linknav key={nav.id} icon={nav.icon} text={nav.text} type={nav.id} />)
                         }</ul>
-                        <Button width="w-[225px]" height="h-[52px]" fontsize="text-[17px]" text="Tweet" bg="bg-[#1D9BF0]" />
-                        <div className="fixed bottom-2 w-[272.4px]">
-                            <div className='flex gap-[7%] text-[15px]'>
-                                <Imagprofil src_img="src/assets/voqA4xci_400x400.png" alt="Photo de profil" width="w-[20%]" height="h-[20%]" />
-                                <div className='w-[77.5%] flex justify-between items-center'>
-                                    <div>
-                                        <div className='flex items-center'>
-                                            <Account_img name_profil="Muking" access="secure" />
+                        <Button width="w-56" height="h-[52px]" fontsize="text-lg" text="Tweet" bg="bg-blue-tweet" classe="hidden desktop:block" />
+                        <div className="fixed bottom-2 laptop:w-[5.5%] tablet:w-[8.5%] desktop:w-[272.4px]">
+                            <Link to="/Project_clone_Twitter/username">
+                                <div className='flex gap-[7%] text-tweet'>
+                                    <Imagprofil src_img="src/assets/voqA4xci_400x400.png" alt="Photo de profil" width="w-[70%] desktop:w-[20%]" height="h-[70%] m-auto desktop:h-[20%]" />
+                                    <div className='hidden w-full desktop:flex desktop:w-[77.5%] justify-between items-center'>
+                                        <div>
+                                            <div className='flex-items-center'>
+                                                <Account_img name_profil="Muking" access="secure" />
+                                            </div>
+                                            <Account_src id_profil="Muking00#" />
                                         </div>
-                                        <Account_src id_profil="Muking00#" />
+                                        {svg_more_btn}
                                     </div>
-                                    {svg_more_btn}
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

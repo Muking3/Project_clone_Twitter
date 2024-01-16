@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Linknav({ icon, text, functionnav, type, way, fontbold }) {
+export default function Linknav({ icon, text, functionnav, type, way }) {
     if (type === 0 || type === 1) {
         way = '/Project_clone_Twitter/'
     }
@@ -8,14 +8,11 @@ export default function Linknav({ icon, text, functionnav, type, way, fontbold }
         way = '/Project_clone_Twitter/username'
     }
     return (
-        <>
-            <Link to={way}>
-                <div className="flex items-center gap-[20px] ml-[13px] px-[12px] py-[10px] 
-            w-auto cursor-pointer hover:bg-[#202327] rounded-[50px]" onClick={functionnav}>
-                    <div className="w-[25px]">{icon}</div>
-                    <span className={`text-[19px] font-bold`}>{text}</span>
-                </div>
-            </Link>
-        </>
+        <Link to={way} className="m-auto desktop:m-0">
+            <div className="w-12 h-12 desktop:w-56 flex-items-center gap-5 desktop:ml-[13px] px-3 hover:bg-gray-hover rounded-full" onClick={functionnav}>
+                {icon}
+                <span className={`text-page font-bold hidden desktop:block`}>{text}</span>
+            </div>
+        </Link>
     )
 }

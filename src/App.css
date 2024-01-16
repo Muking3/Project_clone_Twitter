@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.w-container {
-    max-width: 1265px;
+@layer components {
+    .border-box {
+        @apply border-x-[1px] border-b-[1px] border-[#2F3336] px-4 py-3;
+    }
+    .outline-placeholder{
+        @apply outline-none placeholder:text-[#6E767D];
+    }
+    .text-tweet {
+        @apply text-[15px] leading-normal;
+    }
+    .flex-between {
+        @apply flex justify-between;
+    }
+    .flex-items-center {
+        @apply flex items-center;
+    }
 }

@@ -13,9 +13,9 @@ export function Account_img({ name_profil, access }) {
 export function Account_src({ id_profil, classe }) {
     return (
         <>
-            <div className="text-[#6E767D]">
+            <div className="text-gray-trend">
                 <span href="#" className={classe}>@{id_profil}</span>
-                <span className='px-[4px]'>.</span>
+                <span className='px-1'>.</span>
                 <span href="#">7m</span>
             </div>
         </>
