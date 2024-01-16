@@ -12,6 +12,7 @@ export default {
         "blue-tweet":"#1D9BF0",
         "gray-trend":"#6E767D",
         "gray-hover":"#181818",
+        "pink-like":"#f91880",
       },
       spacing: {
         '4%': '4%',

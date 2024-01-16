@@ -23,10 +23,10 @@ export default function Timeline() {
                 "author_name": "Muking00#",
                 "source": "Muking",
                 "date": 650,
-                "favorites": 62414,
+                "favorites": 0,
                 "id": `M${ids}`,
                 "isVerified": true,
-                "replies": "258",
+                "replies": 258,
                 "retweets": 16811,
                 "text": e.target.value,
             }
@@ -38,6 +38,7 @@ export default function Timeline() {
             ex_tweet.unshift(tweet)
             setIds(x => x + 1)
             setValuetext("")
+            console.log(ex_tweet);
         }
     }
     return (

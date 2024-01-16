@@ -14,7 +14,7 @@ export default function Tweet({ src_profil, name_profil, id_profil, text, src_im
     }
     return (
         <>
-            <div className='border-x-[1px] border-b-[1px] border-[#2F3336] hover:bg-[#080808]'>
+            <div className='border-x-[1px] border-b-[1px] border-[#2F3336]'>
                 <div className='flex gap-[4%] px-[16px] py-[12px]'>
                     <Link to={to} className="w-8% h-8%">
                         <img src={src_profil} alt="Photo de profil" className='rounded-full' />
