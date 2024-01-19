@@ -4,6 +4,9 @@ export default function Linknav({ icon, text, functionnav, type, way }) {
     if (type === 0 || type === 1) {
         way = '/Project_clone_Twitter/'
     }
+    else if (type === 2 || type === 3  || type === 4  || type === 5  || type === 6 || type === 8 ) {
+        way = '/Project_clone_Twitter/auther_pages'
+    }
     else if (type === 7) {
         way = '/Project_clone_Twitter/username'
     }

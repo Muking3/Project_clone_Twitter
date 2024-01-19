@@ -6,6 +6,8 @@ import Linknav from "./Linknav"
 import { svg, svg_more_btn } from "./Svg_icon"
 import Timeline from "./Timeline"
 import Profil from "./Profil"
+import NotFound from "./Notfound"
+import Pagedevelop from "./Pagedevelop"
 
 export default function Sidebar() {
     return (
@@ -38,6 +40,8 @@ export default function Sidebar() {
                 <Routes>
                     <Route path="/Project_clone_Twitter/" element={<Timeline />} />
                     <Route path="/Project_clone_Twitter/username" element={<Profil />} />
+                    <Route path="/Project_clone_Twitter/auther_pages" element={<Pagedevelop />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </>

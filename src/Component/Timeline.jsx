@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Button from "./Button"
 import { ex_tweet } from "./Exemple_tweet"
-import Imagprofil from "./Imagprofil"
 import { svg_stars, svg_timeline } from "./Svg_icon"
 import Tweet from "./Tweet"
 import Twite_editor from "./Twite_editor"
@@ -11,6 +10,15 @@ export default function Timeline() {
     const [tweet, setTweet] = useState(null)
     const [ids, setIds] = useState(0)
     const [valuetext, setValuetext] = useState()
+    const [imgss, setImgss] = useState()
+    const handleFunction = (e) => {
+        let imgs = e.target.files[0]
+        let reader = new FileReader()
+        reader.readAsDataURL(imgs)
+        reader.onload = function () {
+            setImgss(reader.result)
+        }
+    }
     const handleTweet = (e) => {
         const value_textarea = e.target.value.trim()
         if (value_textarea.length === 0 || value_textarea.length > 100) {
@@ -29,6 +37,7 @@ export default function Timeline() {
                 "replies": 258,
                 "retweets": 16811,
                 "text": e.target.value,
+                "image": imgss,
             }
             setTweet(text_write)
         }
@@ -38,6 +47,7 @@ export default function Timeline() {
             ex_tweet.unshift(tweet)
             setIds(x => x + 1)
             setValuetext("")
+            setImgss("")
             console.log(ex_tweet);
         }
     }
@@ -51,17 +61,17 @@ export default function Timeline() {
             </div>
             <div className='border-box'>
                 <div className='flex gap-4%'>
-                    {/* <Imagprofil src_img="src/assets/voqA4xci_400x400.png" width="w-8%" height="h-8%" /> */}
                     <Link to="/Project_clone_Twitter/username" className="w-8% h-8%">
                         <img src="src/assets/voqA4xci_400x400.png" alt="Photo de profil" className='rounded-full' />
                     </Link>
                     <div className="w-88%">
                         <textarea className='bg-black laptop:mt-1.5 resize-none w-full outline-placeholder text-lg desktop:text-xl'
                             placeholder="What's happending?" value={valuetext} onChange={handleTweet}></textarea>
+                        <img src={imgss} alt="" className="rounded-[10px] max-w-auto min-w-[50%] mb-4 min-h-auto max-h-[400px]" />
                         <div className='flex-between items-center'>
                             <div className='flex gap-3.5'>
                                 {
-                                    svg_timeline.map(editor => <Twite_editor key={editor.id} icon={editor.icon} type={editor.id} />)
+                                    svg_timeline.map(editor => <Twite_editor key={editor.id} icon={editor.icon} type={editor.id} handleFunction={handleFunction} />)
                                 }
                             </div>
                             <Button width="w-20" height="h-9" fontsize="text-tweet"

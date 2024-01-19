@@ -10,7 +10,7 @@ export default function Tweet({ src_profil, name_profil, id_profil, text, src_im
         to = '/Project_clone_Twitter/username'
     }
     else {
-        to = '/Project_clone_Twitter/'
+        to = '/Project_clone_Twitter/auther_pages'
     }
     return (
         <>
