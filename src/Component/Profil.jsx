@@ -7,7 +7,7 @@ export default function Profil() {
     const filter_tweet = ex_tweet.filter(x => x.id[0] === "M")
     return (
         <>
-            <div className='w-[47%] border-x-[1px] border-[#2F3336]'>
+            <div className='w-full laptop:w-[47%] border-x-[1px] border-[#2F3336]'>
                 <p className='font-bold text-[20px] border-b-[1px] border-[#2F3336] p-[16px] bg-black'>Profil</p>
                 <div className="absolute z-10 mt-[250px] ml-[20px]">
                     <img src="src/assets/voqA4xci_400x400.png" alt="Photo de profil" className="rounded-[100%] 

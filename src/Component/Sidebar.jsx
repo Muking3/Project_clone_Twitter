@@ -13,17 +13,17 @@ export default function Sidebar() {
     return (
         <>
             <Router>
-                <div className="hidden tablet:block desktop:block tablet:w-[10%] desktop:w-[22%] mt-1 mx-3">
-                    <div className="sticky top-4">
-                        <ul className="flex justify-center flex-col gap-3 mb-3.5">{
+                <div className="sticky top-0 bg-black tablet:block desktop:block tablet:w-[10%] desktop:w-[22%] tablet:mt-1 tablet:mx-3">
+                    <div className="tablet:sticky top-4">
+                        <ul className="flex justify-center tablet:flex-col gap-3 mb-3.5">{
                             svg.map(nav => <Linknav key={nav.id} icon={nav.icon} text={nav.text} type={nav.id} />)
                         }</ul>
                         <Button width="w-56" height="h-[52px]" fontsize="text-lg" text="Tweet" bg="bg-blue-tweet" classe="hidden desktop:block" />
                         <div className="fixed bottom-2 laptop:w-[5.5%] tablet:w-[8.5%] desktop:w-[272.4px]">
                             <Link to="/Project_clone_Twitter/username">
-                                <div className='flex gap-[7%] text-tweet'>
+                                <div className='hidden tablet:flex gap-[7%] text-tweet'>
                                     <Imagprofil src_img="src/assets/voqA4xci_400x400.png" alt="Photo de profil" width="w-[70%] desktop:w-[20%]" height="h-[70%] m-auto desktop:h-[20%]" />
-                                    <div className='hidden w-full desktop:flex desktop:w-[77.5%] justify-between items-center'>
+                                    <div className='tablet:hidden w-full desktop:flex desktop:w-[77.5%] justify-between items-center'>
                                         <div>
                                             <div className='flex-items-center'>
                                                 <Account_img name_profil="Muking" access="secure" />

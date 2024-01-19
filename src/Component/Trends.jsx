@@ -26,6 +26,7 @@ export default function Trends() {
                         <Account_follow img="src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" />
                         <Show_more />
                     </div>
+                    <p className="text-center mt-4 text-[#6E767D]">Terms of science  Privaty Politic  Cookie Policy <br />Imprint  Ads  Info More...©2021 Twiter, Inc</p>
                 </div>
             </div>
         </>

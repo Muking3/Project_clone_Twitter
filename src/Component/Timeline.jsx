@@ -7,53 +7,46 @@ import Twite_editor from "./Twite_editor"
 import { Link } from "react-router-dom"
 
 export default function Timeline() {
-    const [tweet, setTweet] = useState(null)
     const [ids, setIds] = useState(0)
     const [valuetext, setValuetext] = useState()
-    const [imgss, setImgss] = useState()
+    const [src, setSrc] = useState()
     const handleFunction = (e) => {
         let imgs = e.target.files[0]
         let reader = new FileReader()
         reader.readAsDataURL(imgs)
         reader.onload = function () {
-            setImgss(reader.result)
+            setSrc(reader.result)
         }
     }
-    const handleTweet = (e) => {
+    function handleTweet(e) {
         const value_textarea = e.target.value.trim()
-        if (value_textarea.length === 0 || value_textarea.length > 100) {
-            setValuetext()
-        }
-        else {
-            setValuetext(e.target.value)
-            const text_write = {
-                "author_avatar": "src/assets/voqA4xci_400x400.png",
-                "author_name": "Muking00#",
-                "source": "Muking",
-                "date": 650,
-                "favorites": 0,
-                "id": `M${ids}`,
-                "isVerified": true,
-                "replies": 258,
-                "retweets": 16811,
-                "text": e.target.value,
-                "image": imgss,
-            }
-            setTweet(text_write)
-        }
+        value_textarea.length === 0 || value_textarea.length > 100 ? setValuetext() : setValuetext(e.target.value)
     }
     const handlePost = () => {
-        if (valuetext) {
-            ex_tweet.unshift(tweet)
+        const text_write = {
+            "author_avatar": "src/assets/voqA4xci_400x400.png",
+            "author_name": "Muking00#",
+            "source": "Muking",
+            "date": 650,
+            "favorites": 0,
+            "id": `M${ids}`,
+            "isVerified": true,
+            "replies": 258,
+            "retweets": 16811,
+            "text": valuetext,
+            "image": src,
+        }
+        if (valuetext || src) {
+            ex_tweet.unshift(text_write)
             setIds(x => x + 1)
             setValuetext("")
-            setImgss("")
+            setSrc("")
             console.log(ex_tweet);
         }
     }
     return (
         <div className='w-full desktop:w-[47%]'>
-            <div className="sticky top-0">
+            <div className="tablet:sticky tablet:top-0">
                 <div className='flex-between border-box bg-black'>
                     <p className='font-bold text-xl'>Home</p>
                     <div className='flex-items-center'>{svg_stars}</div>
@@ -67,7 +60,7 @@ export default function Timeline() {
                     <div className="w-88%">
                         <textarea className='bg-black laptop:mt-1.5 resize-none w-full outline-placeholder text-lg desktop:text-xl'
                             placeholder="What's happending?" value={valuetext} onChange={handleTweet}></textarea>
-                        <img src={imgss} alt="" className="rounded-[10px] max-w-auto min-w-[50%] mb-4 min-h-auto max-h-[400px]" />
+                        <img src={src} alt="" className="rounded-3xl w-auto mb-4 min-h-auto max-h-[400px]" />
                         <div className='flex-between items-center'>
                             <div className='flex gap-3.5'>
                                 {
@@ -75,7 +68,7 @@ export default function Timeline() {
                                 }
                             </div>
                             <Button width="w-20" height="h-9" fontsize="text-tweet"
-                                opacity={valuetext ? "opacity-100" : "opacity-50"} text="Tweet" bg="bg-blue-tweet" handlefunction={handlePost} />
+                                opacity={valuetext || src ? "opacity-100" : "opacity-50"} text="Tweet" bg="bg-blue-tweet" handlefunction={handlePost} />
                         </div>
                     </div>
                 </div>
