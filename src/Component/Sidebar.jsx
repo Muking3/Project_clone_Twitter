@@ -21,14 +21,14 @@ export default function Sidebar() {
                         <Button width="w-56" height="h-[52px]" fontsize="text-lg" text="Tweet" bg="bg-blue-tweet" classe="hidden desktop:block" />
                         <div className="fixed bottom-2 laptop:w-[5.5%] tablet:w-[8.5%] desktop:w-[272.4px]">
                             <Link to="/Project_clone_Twitter/username">
-                                <div className='hidden tablet:flex gap-[7%] text-tweet'>
+                                <div className='hidden tablet:flex gap-[7%] text-tweet hover:bg-gray-hover p-3 rounded-full'>
                                     <Imagprofil src_img="src/assets/voqA4xci_400x400.png" alt="Photo de profil" width="w-[70%] desktop:w-[20%]" height="h-[70%] m-auto desktop:h-[20%]" />
                                     <div className='tablet:hidden w-full desktop:flex desktop:w-[77.5%] justify-between items-center'>
                                         <div>
                                             <div className='flex-items-center'>
                                                 <Account_img name_profil="Muking" access="secure" />
                                             </div>
-                                            <Account_src id_profil="Muking00#" />
+                                            <Account_src id_profil="Muking00#" access={false}/>
                                         </div>
                                         {svg_more_btn}
                                     </div>

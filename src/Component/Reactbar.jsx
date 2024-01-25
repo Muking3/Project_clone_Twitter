@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { svg_react_color } from "./Svg_icon"
+import { formattedNumber } from "./Time"
 
 export default function Reactbar({ icon, type, rePlie, reTweet, faVorite, number }) {
     if (type === 0) { number = rePlie }
@@ -26,7 +27,7 @@ export default function Reactbar({ icon, type, rePlie, reTweet, faVorite, number
                 <div>
                     {decount ? icon : svg_react_color[0].icons}
                 </div>
-                <span className={"px-3 " + (decount ? "text-gray-trend": "text-pink-like")}>{count}</span>
+                <span className={"px-3 " + (decount ? "text-gray-trend": "text-pink-like")}>{formattedNumber(count)}</span>
             </div>
         </>
     )

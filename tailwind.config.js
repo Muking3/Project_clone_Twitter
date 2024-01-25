@@ -11,13 +11,18 @@ export default {
       colors: {
         "blue-tweet":"#1D9BF0",
         "gray-trend":"#6E767D",
-        "gray-hover":"#181818",
+        "gray-trend-700":"#202327",
+        "gray-hover":"#080808",
         "pink-like":"#f91880",
+        "gray-border":"#2F3336",
+        "gray-hover-trend":"#1d1f23",
       },
       spacing: {
         '4%': '4%',
         '8%': '8%',
         '88%': '88%',
+        '10%': '10%',
+        "100":"400px"
       },
       screens: {
         'tablet': '640px',

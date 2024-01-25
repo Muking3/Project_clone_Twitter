@@ -5,8 +5,9 @@ import Imagprofil from "./Imagprofil"
 export default function Account_follow({ img, profil, name }) {
     return (
         <>
-            <div className='flex gap-[7%] px-[16px] py-[12px] text-[15px]'>
+            <div className='flex gap-[7%] px-4 py-3 text-[15px] hover:bg-gray-hover-trend'>
                 <Imagprofil src_img={img} alt="Photo de profil" width="w-[13.9%]" height="h-[13.9%]" />
+                {/* <Imagprofil src_img={img} tos="/Project_clone_Twitter/auther_pages" width="w-[13.9%]" height="h-[13.9%]" /> */}
                 <div className='w-[77.5%] flex-items-center justify-between'>
                     <div>
                         <div className='flex-items-center'>

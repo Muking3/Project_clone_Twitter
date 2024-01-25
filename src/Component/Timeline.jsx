@@ -1,12 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "./Button"
 import { ex_tweet } from "./Exemple_tweet"
 import { svg_stars, svg_timeline } from "./Svg_icon"
 import Tweet from "./Tweet"
 import Twite_editor from "./Twite_editor"
 import { Link } from "react-router-dom"
+import { time } from "./Time"
+import axios from "axios"
 
 export default function Timeline() {
+    // const [res_tweet, setRes_tweet] = useState(ex_tweet)
+    // useEffect(() => {
+    //     try {
+    //         axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts").then(res => setRes_tweet(res.data))
+    //     } catch (error) {
+    //         console.error("Probleme de connexion");
+    //     }
+    // }, [])
+    // console.log(res_tweet);
     const [ids, setIds] = useState(0)
     const [valuetext, setValuetext] = useState()
     const [src, setSrc] = useState()
@@ -27,12 +38,12 @@ export default function Timeline() {
             "author_avatar": "src/assets/voqA4xci_400x400.png",
             "author_name": "Muking00#",
             "source": "Muking",
-            "date": 650,
+            "date": time,
             "favorites": 0,
             "id": `M${ids}`,
             "isVerified": true,
             "replies": 258,
-            "retweets": 16811,
+            "retweets": 1000,
             "text": valuetext,
             "image": src,
         }
@@ -54,13 +65,15 @@ export default function Timeline() {
             </div>
             <div className='border-box'>
                 <div className='flex gap-4%'>
-                    <Link to="/Project_clone_Twitter/username" className="w-8% h-8%">
-                        <img src="src/assets/voqA4xci_400x400.png" alt="Photo de profil" className='rounded-full' />
+                    {/* <Imagprofil to="/Project_clone_Twitter/username" src_img="src/assets/voqA4xci_400x400.png" width="8%" height="8%" /> */}
+
+                    <Link to="/Project_clone_Twitter/username" className="w-8%">
+                        <img src="src/assets/voqA4xci_400x400.png" alt="Photo de profil" className='rounded-full w-full h-auto' />
                     </Link>
                     <div className="w-88%">
                         <textarea className='bg-black laptop:mt-1.5 resize-none w-full outline-placeholder text-lg desktop:text-xl'
                             placeholder="What's happending?" value={valuetext} onChange={handleTweet}></textarea>
-                        <img src={src} alt="" className="rounded-3xl w-auto mb-4 min-h-auto max-h-[400px]" />
+                        <img src={src} alt="" className="rounded-3xl w-auto mb-4 min-h-auto max-h-100" />
                         <div className='flex-between items-center'>
                             <div className='flex gap-3.5'>
                                 {
@@ -75,8 +88,11 @@ export default function Timeline() {
             </div>
             <ul>{
                 ex_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.source} id_profil={tweet.author_name}
-                    text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar}
+                    text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar} date={tweet.date}
                     replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} verified={tweet.isVerified} />)
+                // res_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.title} id_profil={tweet.userId}
+                //     text={tweet.body} src_imgpst={tweet.url} src_profil={tweet.thumbnailUrl} date={tweet.date}
+                //     repost={tweet.repost} favorite={tweet.like} />)
             }</ul>
         </div>
     )
