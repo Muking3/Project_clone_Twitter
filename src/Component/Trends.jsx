@@ -17,14 +17,14 @@ export default function Trends() {
                         <Trendsliste />
                         <Trendsliste />
                         <Trendsliste />
-                        <Show_more />
+                        <Show_more color="gray-hover-trend" rounded="rounded-b-2xl" />
                     </div>
                     <div className='rounded-2xl bg-gray-trend-700'>
                         <h3 className='py-3 ml-4 text-xl font-extrabold'>Who to follow</h3>
-                        <Account_follow img="src/assets/image 1 (1).svg" name="New York Times" profil="nytimes" />
-                        <Account_follow img="src/assets/image 1.svg" name="CNN" profil="CNN" />
-                        <Account_follow img="src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" />
-                        <Show_more />
+                        <Account_follow img="src/assets/image 1 (1).svg" name="New York Times" profil="nytimes" color="gray-hover-trend" />
+                        <Account_follow img="src/assets/image 1.svg" name="CNN" profil="CNN" color="gray-hover-trend" />
+                        <Account_follow img="src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" color="gray-hover-trend" />
+                        <Show_more color="gray-hover-trend" rounded="rounded-b-2xl" />
                     </div>
                     <p className="text-center mt-4 text-gray-trend">Terms of science  Privaty Politic  Cookie Policy <br />Imprint  Ads  Info More...©2021 Twiter, Inc</p>
                 </div>

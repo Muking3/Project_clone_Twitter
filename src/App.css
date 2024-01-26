@@ -4,7 +4,7 @@
 
 @layer components {
     .border-box {
-        @apply border-x-[1px] border-b-[1px] border-[#2F3336] px-4 py-3;
+        @apply border-x-[1px] border-b-[1px] border-[#2F3336];
     }
     .outline-placeholder{
         @apply outline-none placeholder:text-[#6E767D];
@@ -21,4 +21,7 @@
     /* .hoverf {
         @apply flex items-center justify-between rounded-full shadow-indigo-500/50;
     } */
+    .text-tw {
+        @apply text-trend text-gray-trend;
+    }
 }

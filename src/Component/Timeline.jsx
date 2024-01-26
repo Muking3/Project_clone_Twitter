@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Button from "./Button"
-import { ex_tweet } from "./Exemple_tweet"
 import { svg_stars, svg_timeline } from "./Svg_icon"
-import Tweet from "./Tweet"
+import Tweet from "./Tweet/Tweet"
 import Twite_editor from "./Twite_editor"
 import { Link } from "react-router-dom"
-import { time } from "./Time"
 import axios from "axios"
+import { ProfilContext } from "./Sidebar"
 
 export default function Timeline() {
-    // const [res_tweet, setRes_tweet] = useState(ex_tweet)
-    // useEffect(() => {
-    //     try {
-    //         axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts").then(res => setRes_tweet(res.data))
-    //     } catch (error) {
-    //         console.error("Probleme de connexion");
-    //     }
-    // }, [])
-    // console.log(res_tweet);
-    const [ids, setIds] = useState(0)
+    const user = useContext(ProfilContext)
+    const [res_tweet, setRes_tweet] = useState([])
+    useEffect(() => {
+        try {
+            axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts").then(res => setRes_tweet(res.data))
+        } catch (error) {
+            console.error("Probleme de connexion");
+        }
+    }, [])
+    console.log(res_tweet);
+    const [ids, setIds] = useState({})
     const [valuetext, setValuetext] = useState()
     const [src, setSrc] = useState()
     const handleFunction = (e) => {
@@ -35,40 +35,40 @@ export default function Timeline() {
     }
     const handlePost = () => {
         const text_write = {
-            "author_avatar": "src/assets/voqA4xci_400x400.png",
-            "author_name": "Muking00#",
-            "source": "Muking",
-            "date": time,
-            "favorites": 0,
-            "id": `M${ids}`,
-            "isVerified": true,
-            "replies": 258,
-            "retweets": 1000,
-            "text": valuetext,
-            "image": src,
+            "userId": 3,
+            "id": `S${ids}`,
+            "title": "Samantha",
+            "body": valuetext,
+            "url": src,
+            "thumbnailUrl": user.profil,
+            "like": 999,
+            "repost": 3,
         }
         if (valuetext || src) {
-            ex_tweet.unshift(text_write)
+            try {
+                axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", text_write)
+                    .then(res => setRes_tweet([res.data, ...res_tweet]))
+            } catch (error) {
+                console.error('Erreur lors de la requête POST :', error);
+            }
             setIds(x => x + 1)
             setValuetext("")
             setSrc("")
-            console.log(ex_tweet);
+            console.log(res_tweet);
         }
     }
     return (
         <div className='w-full desktop:w-[47%]'>
             <div className="tablet:sticky tablet:top-0">
-                <div className='flex-between border-box bg-black'>
+                <div className='flex-between border-box px-4 py-3 bg-black'>
                     <p className='font-bold text-xl'>Home</p>
                     <div className='flex-items-center'>{svg_stars}</div>
                 </div>
             </div>
-            <div className='border-box'>
+            <div className='border-box px-4 py-3'>
                 <div className='flex gap-4%'>
-                    {/* <Imagprofil to="/Project_clone_Twitter/username" src_img="src/assets/voqA4xci_400x400.png" width="8%" height="8%" /> */}
-
-                    <Link to="/Project_clone_Twitter/username" className="w-8%">
-                        <img src="src/assets/voqA4xci_400x400.png" alt="Photo de profil" className='rounded-full w-full h-auto' />
+                    <Link to="/Project_clone_Twitter/3" className="w-8%">
+                        <img src={user.profil} alt="Photo de profil" className='rounded-full w-full h-auto' />
                     </Link>
                     <div className="w-88%">
                         <textarea className='bg-black laptop:mt-1.5 resize-none w-full outline-placeholder text-lg desktop:text-xl'
@@ -87,12 +87,7 @@ export default function Timeline() {
                 </div>
             </div>
             <ul>{
-                ex_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.source} id_profil={tweet.author_name}
-                    text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar} date={tweet.date}
-                    replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} verified={tweet.isVerified} />)
-                // res_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.title} id_profil={tweet.userId}
-                //     text={tweet.body} src_imgpst={tweet.url} src_profil={tweet.thumbnailUrl} date={tweet.date}
-                //     repost={tweet.repost} favorite={tweet.like} />)
+                res_tweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} src_imgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
             }</ul>
         </div>
     )

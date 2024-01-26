@@ -2,10 +2,10 @@ import { Account_img, Account_src } from "./Account"
 import Button from "./Button"
 import Imagprofil from "./Imagprofil"
 
-export default function Account_follow({ img, profil, name }) {
+export default function Account_follow({ img, profil, name, color }) {
     return (
         <>
-            <div className='flex gap-[7%] px-4 py-3 text-[15px] hover:bg-gray-hover-trend'>
+            <div className={`flex gap-[7%] px-4 py-3 text-tweet hover:bg-${color}`}>
                 <Imagprofil src_img={img} alt="Photo de profil" width="w-[13.9%]" height="h-[13.9%]" />
                 {/* <Imagprofil src_img={img} tos="/Project_clone_Twitter/auther_pages" width="w-[13.9%]" height="h-[13.9%]" /> */}
                 <div className='w-[77.5%] flex-items-center justify-between'>

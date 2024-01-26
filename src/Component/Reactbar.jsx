@@ -2,10 +2,10 @@ import { useState } from "react"
 import { svg_react_color } from "./Svg_icon"
 import { formattedNumber } from "./Time"
 
-export default function Reactbar({ icon, type, rePlie, reTweet, faVorite, number }) {
+export default function Reactbar({ icon, type, rePlie, repost, faVorite, number }) {
     if (type === 0) { number = rePlie }
     else if (type === 1) { number = faVorite }
-    else if (type === 2) { number = reTweet }
+    else if (type === 2) { number = repost }
     else { number = null }
     const [count, setCount] = useState(number)
     const [decount, setDecount] = useState(true)
