@@ -9,14 +9,16 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import { getRandomInt } from "./MathRandom"
 import { formattedNumber } from "./Time"
+import { TweetContext } from "../App"
 
 export default function Profil({ userId }) {
     const users = useContext(ProfilContext);
+    const { res_tweet, setRes_tweet } = useContext(TweetContext);
     let { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({})
     console.log(id);
-
+    const filter_tweet = res_tweet.filter()
     useEffect(() => {
         id ? getUser(id) : setUser(users)
     }, [])
@@ -67,11 +69,11 @@ export default function Profil({ userId }) {
                 <Account_follow img="src/assets/Profile-Photo.svg" name="X" profil="Twitter" color="gray-hover" />
                 <Show_more color="gray-hover" />
             </div>
-            {/* <ul>{
+            <ul>{
                     filter_tweet.map(tweet => <Tweet key={tweet.id} name_profil={tweet.source} id_profil={tweet.author_name}
                         text={tweet.text} src_imgpst={tweet.image} src_profil={tweet.author_avatar}
                         replie={tweet.replies} retweet={tweet.retweets} favorite={tweet.favorites} verified={tweet.isVerified} />)
-                }</ul> */}
+                }</ul>
         </div >
     )
 }

@@ -6,17 +6,11 @@ import Twite_editor from "./Twite_editor"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { ProfilContext } from "./Sidebar"
+import { TweetContext } from "../App"
 
 export default function Timeline() {
     const user = useContext(ProfilContext)
-    const [res_tweet, setRes_tweet] = useState([])
-    useEffect(() => {
-        try {
-            axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts").then(res => setRes_tweet(res.data))
-        } catch (error) {
-            console.error("Probleme de connexion");
-        }
-    }, [])
+    const { res_tweet, setRes_tweet } = useContext(TweetContext);
     console.log(res_tweet);
     const [ids, setIds] = useState({})
     const [valuetext, setValuetext] = useState()
@@ -47,7 +41,7 @@ export default function Timeline() {
         if (valuetext || src) {
             try {
                 axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", text_write)
-                    .then(res => {setRes_tweet([res.data, ...res_tweet])})
+                    .then(res => { setRes_tweet([res.data, ...res_tweet]) })
             } catch (error) {
                 console.error('Erreur lors de la requête POST :', error);
             }
