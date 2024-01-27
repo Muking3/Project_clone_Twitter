@@ -47,7 +47,7 @@ export default function Timeline() {
         if (valuetext || src) {
             try {
                 axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", text_write)
-                    .then(res => setRes_tweet([res.data, ...res_tweet]))
+                    .then(res => {setRes_tweet([res.data, ...res_tweet])})
             } catch (error) {
                 console.error('Erreur lors de la requête POST :', error);
             }
