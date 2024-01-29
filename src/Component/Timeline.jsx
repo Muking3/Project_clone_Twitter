@@ -9,7 +9,13 @@ import { ProfilContext } from "./Sidebar"
 import { TweetContext } from "../App"
 
 export default function Timeline() {
-    const user = useContext(ProfilContext)
+    const { profil } = useContext(TweetContext);
+    console.log(profil);
+    const [users, setUsers] = useState({})
+    const find_user = profil.find(x => x.id === 3)
+    useEffect(() => {
+        setUsers(find_user)
+    }, [])
     const { res_tweet, setRes_tweet } = useContext(TweetContext);
     console.log(res_tweet);
     const [ids, setIds] = useState({})
@@ -34,7 +40,7 @@ export default function Timeline() {
             "title": "Samantha",
             "body": valuetext,
             "url": src,
-            "thumbnailUrl": user.profil,
+            "thumbnailUrl": users.profil,
             "like": 999,
             "repost": 3,
         }
@@ -62,7 +68,7 @@ export default function Timeline() {
             <div className='border-box px-4 py-3'>
                 <div className='flex gap-4%'>
                     <Link to="/Project_clone_Twitter/3" className="w-8%">
-                        <img src={user.profil} alt="Photo de profil" className='rounded-full w-full h-auto' />
+                        <img src={users.profil} alt="Photo" className='rounded-full w-full h-auto' />
                     </Link>
                     <div className="w-88%">
                         <textarea className='bg-black laptop:mt-1.5 resize-none w-full outline-placeholder text-lg desktop:text-xl'

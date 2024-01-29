@@ -5,14 +5,25 @@ import { svg_react } from "../Svg_icon"
 import { Alltime } from "../Time"
 import { TweetTitle } from "./TweetTitle"
 import { TweetPhoto } from "./TweetPhoto"
+import { useContext, useEffect, useState } from "react"
+import { ProfilContext } from "../Sidebar"
+import { TweetContext } from "../../App"
+
 
 export default function Tweet({ userId, text, src_imgpst, replie, repost, favorite, verified }) {
+    const { profil } = useContext(TweetContext);
+    console.log(profil);
+    const [users, setUsers] = useState({})
+    const find_user = profil.find(x => x.id === userId)
+    useEffect(() => {
+        setUsers(find_user)
+    }, [])
     return (
         <div className='border-x border-b border-gray-border hover:bg-gray-hover'>
             <div className='flex gap-4% px-4 py-3'>
-                <TweetPhoto userId={userId} />
+                <TweetPhoto userId={userId} users={users} />
                 <div className='w-88%'>
-                    <TweetTitle userId={userId} verified={verified} />
+                    <TweetTitle userId={userId} verified={verified} users={users} />
                     <p className='pt-1'>{text}</p>
                     <div className="mt-3">
                         {src_imgpst && <img src={src_imgpst} alt="Image du poste"
