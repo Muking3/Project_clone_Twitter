@@ -21,7 +21,7 @@ export default function Sidebar() {
         } catch (error) { console.error("Probleme de connexion") }
     }, [])
     return (
-        <ProfilContext.Provider value={user}>
+        <ProfilContext.Provider value={{user, setUser}}>
             <Router>
                 <div className="sticky top-0 bg-black tablet:block desktop:block tablet:w-[10%] desktop:w-[22%] tablet:mt-1 tablet:mx-3">
                     <div className="tablet:sticky top-4">

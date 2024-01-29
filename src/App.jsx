@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { useParams } from "react-router-dom"
 import './App.css'
 import Sidebar from './Component/Sidebar'
 import Trends from './Component/Trends'
@@ -6,10 +7,19 @@ import axios from "axios"
 
 export const TweetContext = createContext()
 export default function App() {
+  // let { id } = useParams();
   const [res_tweet, setRes_tweet] = useState([])
+  const [profil, setProfil] = useState([])
   useEffect(() => {
     try {
       axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts/").then(res => setRes_tweet(res.data))
+    } catch (error) {
+      console.error("Probleme de connexion");
+    }
+  }, [])
+  useEffect(() => {
+    try {
+      axios.get("https://my-json-server.typicode.com/amare53/twiterdb/users/").then(res => setProfil(res.data))
     } catch (error) {
       console.error("Probleme de connexion");
     }
@@ -19,7 +29,7 @@ export default function App() {
   // };
   return (
     <>
-      <TweetContext.Provider value={{res_tweet, setRes_tweet}}>
+      <TweetContext.Provider value={{ res_tweet, setRes_tweet, profil, setProfil }}>
         <div className='flex flex-col tablet:flex-row max-w-[1265px] h-vh m-auto'>
           <Sidebar />
           <Trends />

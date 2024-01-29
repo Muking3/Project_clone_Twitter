@@ -17,7 +17,8 @@ export default {
         "pink-like": "#f91880",
         "gray-border": "#2F3336",
         "gray-hover-trend": "#1d1f23",
-        "gray-profil": "#333639"
+        "gray-profil": "#333639",
+        "gray-edit":"rgba(36, 45, 52, 0.5)"
       },
       spacing: {
         '4%': '4%',
