@@ -10,23 +10,41 @@ export default function App() {
   // let { id } = useParams();
   const [res_tweet, setRes_tweet] = useState([])
   const [profil, setProfil] = useState([])
-  useEffect(() => {
-    try {
-      axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts/").then(res => setRes_tweet(res.data))
-    } catch (error) {
-      console.error("Probleme de connexion");
-    }
-  }, [])
-  useEffect(() => {
-    try {
-      axios.get("https://my-json-server.typicode.com/amare53/twiterdb/users/").then(res => setProfil(res.data))
-    } catch (error) {
-      console.error("Probleme de connexion");
-    }
-  }, [])
+  // useEffect(() => {
+  //   try {
+  //     axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts/").then(res => setRes_tweet(res.data))
+  //   } catch (error) {
+  //     console.error("Probleme de connexion");
+  //   }
+  // }, [])
+  // useEffect(() => {
+  //   try {
+  //     axios.get("https://my-json-server.typicode.com/amare53/twiterdb/users/").then(res => setProfil(res.data))
+  //   } catch (error) {
+  //     console.error("Probleme de connexion");
+  //   }
+  // }, [])
   // const updateContextValue = (newValue) => {
   //   setRes_tweet(newValue);
   // };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [tweetsRes, usersRes] = await Promise.all([
+          axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts/"),
+          axios.get("https://my-json-server.typicode.com/amare53/twiterdb/users")
+        ]);
+
+        setRes_tweet(tweetsRes.data);
+        setProfil(usersRes.data);
+      } catch (error) {
+        console.error("Problème de connexion", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <TweetContext.Provider value={{ res_tweet, setRes_tweet, profil, setProfil }}>
