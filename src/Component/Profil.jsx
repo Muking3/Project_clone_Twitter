@@ -106,5 +106,5 @@ function Follow({ num, text }) {
 }
 
 function EditProfil({ names }) {
-    return <input type="text" name={names} className="bg-black outline-placeholder border border-gray-border w-[99%] h-10 mb-4" placeholder={names} />
+    return <input type="text" name={names} className="bg-black outline-placeholder border border-gray-border w-[99%] h-10 mb-4" placeholder={names} maxLength={15} required />
 }
