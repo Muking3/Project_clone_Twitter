@@ -24,9 +24,12 @@ export default function Profil() {
     console.log(find_user);
     console.log(filter_tweet);
     useEffect(() => {
-        id ? setUser(find_user) : setUser(user)
-        console.log(find_user);
-        console.log(user);
+        if (id) {
+            setUser(find_user)
+        }
+        else {
+            setUser(user)
+        }
     }, [id])
     const [showDialog, setShowDialog] = useState(false);
     const openDialog = () => {
@@ -60,7 +63,9 @@ export default function Profil() {
                     </div>
                     <div className={`w-full h-52 bg-gray-profil`}></div>
                     <div className="w-full flex justify-end">
-                        <Button classe="border border-gray-border m-4" padding="px-4 py-1" bg="bg-black hover:bg-[#181919]" text="Edit profile" handlefunction={openDialog} />
+                        {/* {id === 3 && */}
+                            <Button classe="border border-gray-border m-4" padding="px-4 py-1" bg="bg-black hover:bg-[#181919]" text="Edit profile" handlefunction={openDialog} />
+                        {/* } */}
                     </div>
                     <div className="w-11/12 m-auto pt-6">
                         <div className="mb-3">
