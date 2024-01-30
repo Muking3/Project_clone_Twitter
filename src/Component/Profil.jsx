@@ -81,8 +81,8 @@ export default function Profil() {
                 }</ul>
             </div >
             {showDialog && (
-                <div className="w-full h-full fixed bg-gray-edit z-20 left-0 top-0 flex justify-center items-center">
-                    <span onClick={closeDialog}>&times;</span>
+                <div className="w-full h-full fixed bg-gray-edit z-40 left-0 top-0 flex justify-center items-center">
+                    <span className="absolute top-2 right-2 cursor-pointer text-white text-3xl" onClick={closeDialog}>&times;</span>
                     <form className="bg-black laptop:rounded-3xl h-full w-[99%] laptop:w-[30%] laptop:h-auto p-4" onSubmit={handleEdit}>
                         <EditProfil names="name" />
                         <EditProfil names="username" />
