@@ -1,4 +1,4 @@
-import { svg_more_btn } from "./Svg_icon"
+import { svg_more_btn } from "../Svg_icon"
 
 export default function Trendsliste() {
     return (

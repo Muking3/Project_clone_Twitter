@@ -1,4 +1,4 @@
-import { svg_search } from "./Svg_icon"
+import { svg_search } from "../Svg_icon"
 
 export default function Search() {
     return (

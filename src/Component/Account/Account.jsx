@@ -1,4 +1,5 @@
-import { svg_certified, svg_secure } from "./Svg_icon"
+import { svg_certified, svg_secure } from "../Svg_icon"
+import { time } from "../Time"
 
 export function Account_img({ name_profil, access }) {
     return (
@@ -17,7 +18,7 @@ export function Account_src({ id_profil, classe, date, access }) {
             {access &&
                 <div>
                     <span className='px-1'>.</span>
-                    <span href="#">{date}</span>
+                    <span href="#">{time}</span>
                 </div>
             }
         </div>

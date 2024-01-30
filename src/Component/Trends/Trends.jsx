@@ -1,4 +1,5 @@
-import Account_follow from "./Account_follow";
+import Account_follow from "../Account/Account_follow";
+import { svg_setting } from "../Svg_icon";
 import Search from "./Search";
 import Show_more from "./Show_more";
 import Trendsliste from "./Trendsliste";
@@ -10,8 +11,9 @@ export default function Trends() {
                 <div className='sticky top-2'>
                     <Search />
                     <div className='rounded-2xl bg-gray-trend-700 mb-4'>
-                        <div className='flex-between items-center'>
-                            <h3 className='my-3 ml-4 text-xl font-extrabold'>Trends for you</h3>
+                        <div className='flex-between items-center py-3 px-4'>
+                            <h3 className='text-xl font-extrabold'>Trends for you</h3>
+                            {svg_setting}
                         </div>
                         <Trendsliste />
                         <Trendsliste />

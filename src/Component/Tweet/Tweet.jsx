@@ -1,18 +1,12 @@
-import { Link } from "react-router-dom"
-import { Account_img, Account_src } from "../Account"
-import Reactbar from "../Reactbar"
+import Reactbar from "./Reactbar"
 import { svg_react } from "../Svg_icon"
-import { Alltime } from "../Time"
 import { TweetTitle } from "./TweetTitle"
 import { TweetPhoto } from "./TweetPhoto"
 import { useContext, useEffect, useState } from "react"
-import { ProfilContext } from "../Sidebar"
 import { TweetContext } from "../../App"
-
 
 export default function Tweet({ userId, text, src_imgpst, replie, repost, favorite, verified }) {
     const { profil } = useContext(TweetContext);
-    console.log(profil);
     const [users, setUsers] = useState({})
     const find_user = profil.find(x => x.id === userId)
     useEffect(() => {

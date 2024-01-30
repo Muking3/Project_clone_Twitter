@@ -1,35 +1,22 @@
 import { useContext, useEffect, useState } from "react"
-import Account_follow from "./Account_follow"
-import { ex_tweet } from "./Exemple_tweet"
-import Show_more from "./Show_more"
+import Account_follow from "./Account/Account_follow"
+import Show_more from "./Trends/Show_more"
 import { svg_calendar } from "./Svg_icon"
 import Tweet from "./Tweet/Tweet"
-import { ProfilContext } from "./Sidebar"
 import { useParams } from "react-router-dom"
-import axios from "axios"
 import { getRandomInt } from "./MathRandom"
-import { formattedNumber } from "./Time"
 import { TweetContext } from "../App"
 import Button from "./Button"
+import { formattedNumber } from "./Formatnum"
 
 export default function Profil() {
-    const { users, setUsers } = useContext(ProfilContext);
-    const { res_tweet, setRes_tweet, profil, setProfil } = useContext(TweetContext);
+    const { restweet, profil, setProfil } = useContext(TweetContext);
     let { id } = useParams();
-    const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({})
-    console.log(typeof (id), id);
-    const filter_tweet = res_tweet.filter(x => x.userId === parseInt(id))
+    const filter_tweet = restweet.filter(x => x.userId === parseInt(id))
     const find_user = profil.find(x => x.id === parseInt(id))
-    console.log(find_user);
-    console.log(filter_tweet);
     useEffect(() => {
-        if (id) {
-            setUser(find_user)
-        }
-        else {
-            setUser(user)
-        }
+        id ? setUser(find_user) : setUser(user)
     }, [id])
     const [showDialog, setShowDialog] = useState(false);
     const openDialog = () => {
@@ -42,7 +29,6 @@ export default function Profil() {
         e.preventDefault()
         let data = new FormData(e.target)
         const newProfil = Object.fromEntries(data)
-        console.log(newProfil);
         setShowDialog(false);
         newProfil.profil = "https://via.placeholder.com/150/392537"
         newProfil.thumbnailProfil = "https://via.placeholder.com/150/392537"
@@ -51,7 +37,6 @@ export default function Profil() {
         const updatedProfil = [...profil];
         updatedProfil.splice(2, 1, newProfil);
         setProfil(updatedProfil);
-        console.log(profil);
     }
     return (
         <>
@@ -62,10 +47,10 @@ export default function Profil() {
                         <img src={user.thumbnailProfil} alt="Photo de profil" className="rounded-full border-4 border-black w-36 h-36" />
                     </div>
                     <div className={`w-full h-52 bg-gray-profil`}></div>
-                    <div className="w-full flex justify-end">
-                        {/* {id === 3 && */}
-                            <Button classe="border border-gray-border m-4" padding="px-4 py-1" bg="bg-black hover:bg-[#181919]" text="Edit profile" handlefunction={openDialog} />
-                        {/* } */}
+                    <div className="w-full flex justify-end h-16">
+                        {id === "3" &&
+                            <Button classe="border border-gray-border m-4" padding="px-4" bg="bg-black hover:bg-[#181919]" text="Edit profile" handlefunction={openDialog} />
+                        }
                     </div>
                     <div className="w-11/12 m-auto pt-6">
                         <div className="mb-3">
@@ -82,14 +67,15 @@ export default function Profil() {
                         </div>
                     </div>
                 </div>
-                <div className='border-box'>
+                <h2 className="py-4 text-center font-extrabold border-box">Posts</h2>
+                {filter_tweet.length === 0 && < div className='border-box'>
                     <h3 className='py-7 ml-4 text-xl font-extrabold'>You might like</h3>
                     <Account_follow img="src/assets/image 1 (1).svg" name="New York Times" profil="nytimes" color="gray-hover" />
                     <Account_follow img="src/assets/image 1.svg" name="CNN" profil="CNN" color="gray-hover" />
                     <Account_follow img="src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" color="gray-hover" />
                     <Account_follow img="src/assets/Profile-Photo.svg" name="X" profil="Twitter" color="gray-hover" />
                     <Show_more color="gray-hover" />
-                </div>
+                </div>}
                 <ul>{
                     filter_tweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} src_imgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
                 }</ul>
@@ -103,7 +89,8 @@ export default function Profil() {
                         <button type="submit" className="w-[79px] h-[31px] bg-white rounded-full text-black mt-4">Save</button>
                     </form>
                 </div>
-            )}
+            )
+            }
         </>
     )
 }

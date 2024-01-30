@@ -1,23 +1,20 @@
 import { useContext, useEffect, useState } from "react"
-import Button from "./Button"
-import { svg_stars, svg_timeline } from "./Svg_icon"
-import Tweet from "./Tweet/Tweet"
+import Button from "../Button"
+import { svg_stars, svg_timeline } from "../Svg_icon"
+import Tweet from "../Tweet/Tweet"
 import Twite_editor from "./Twite_editor"
 import { Link } from "react-router-dom"
 import axios from "axios"
-import { ProfilContext } from "./Sidebar"
-import { TweetContext } from "../App"
+import { TweetContext } from "../../App"
 
 export default function Timeline() {
     const { profil } = useContext(TweetContext);
-    console.log(profil);
     const [users, setUsers] = useState({})
     const find_user = profil.find(x => x.id === 3)
     useEffect(() => {
         setUsers(find_user)
     }, [])
-    const { res_tweet, setRes_tweet } = useContext(TweetContext);
-    console.log(res_tweet);
+    const { restweet, setRestweet } = useContext(TweetContext);
     const [ids, setIds] = useState({})
     const [valuetext, setValuetext] = useState()
     const [src, setSrc] = useState()
@@ -47,14 +44,13 @@ export default function Timeline() {
         if (valuetext || src) {
             try {
                 axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", text_write)
-                    .then(res => { setRes_tweet([res.data, ...res_tweet]) })
+                    .then(res => { setRestweet([res.data, ...restweet]) })
             } catch (error) {
                 console.error('Erreur lors de la requête POST :', error);
             }
             setIds(x => x + 1)
             setValuetext("")
             setSrc("")
-            console.log(res_tweet);
         }
     }
     return (
@@ -87,7 +83,7 @@ export default function Timeline() {
                 </div>
             </div>
             <ul>{
-                res_tweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} src_imgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
+                restweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} src_imgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
             }</ul>
         </div>
     )
