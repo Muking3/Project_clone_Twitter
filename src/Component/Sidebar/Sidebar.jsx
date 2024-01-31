@@ -14,7 +14,7 @@ import Linknav from "./Linknav"
 import Loading from "../Loading"
 
 export default function Sidebar() {
-    const { profil } = useContext(TweetContext);
+    const { profil } = useContext(TweetContext)
     if (profil.length === 0) {
         return (<Loading />)
     }
