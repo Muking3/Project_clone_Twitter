@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from 'react'
 import './App.css'
-
 import Trends from './Component/Trends/Trends'
 import axios from "axios"
 import Sidebar from './Component/Sidebar/Sidebar'
+import Loading from './Component/ComponentGeneral/Loading'
 
 export const TweetContext = createContext()
 
@@ -27,7 +27,9 @@ export default function App() {
 
     fetchData();
   }, []);
-
+  if (profil.length === 0) {
+    return (<Loading />)
+  }
   return (
     <>
       <TweetContext.Provider value={{ restweet, setRestweet, profil, setProfil }}>

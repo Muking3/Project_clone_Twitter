@@ -1,7 +1,7 @@
-import Account_follow from "../Account/Account_follow";
-import { svg_setting } from "../Svg_icon";
+import { svgSetting } from "../ComponentGeneral/SvgIcon";
+import AccountFollow from "../Account/AccountFollow";
 import Search from "./Search";
-import Show_more from "./Show_more";
+import ShowMore from "./ShowMore";
 import Trendsliste from "./Trendsliste";
 
 export default function Trends() {
@@ -13,20 +13,20 @@ export default function Trends() {
                     <div className='rounded-2xl bg-gray-trend-700 mb-4'>
                         <div className='flex-between items-center py-3 px-4'>
                             <h3 className='text-xl font-extrabold'>Trends for you</h3>
-                            {svg_setting}
+                            {svgSetting}
                         </div>
                         <Trendsliste />
                         <Trendsliste />
                         <Trendsliste />
                         <Trendsliste />
-                        <Show_more color="gray-hover-trend" rounded="rounded-b-2xl" />
+                        <ShowMore color="gray-hover-trend" rounded="rounded-b-2xl" />
                     </div>
                     <div className='rounded-2xl bg-gray-trend-700'>
                         <h3 className='py-3 ml-4 text-xl font-extrabold'>Who to follow</h3>
-                        <Account_follow img="src/assets/image 1 (1).svg" name="New York Times" profil="nytimes" color="gray-hover-trend" />
-                        <Account_follow img="src/assets/image 1.svg" name="CNN" profil="CNN" color="gray-hover-trend" />
-                        <Account_follow img="src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" color="gray-hover-trend" />
-                        <Show_more color="gray-hover-trend" rounded="rounded-b-2xl" />
+                        <AccountFollow img="./src/assets/image 1 (1).svg" name="New York Times" profil="nytimes" color="gray-hover-trend" />
+                        <AccountFollow img="./src/assets/image 1.svg" name="CNN" profil="CNN" color="gray-hover-trend" />
+                        <AccountFollow img="./src/assets/Profile-Photo.svg" name="Twitter" profil="Twitter" color="gray-hover-trend" />
+                        <ShowMore color="gray-hover-trend" rounded="rounded-b-2xl" />
                     </div>
                     <p className="text-center mt-4 text-gray-trend">Terms of science  Privaty Politic  Cookie Policy <br />Imprint  Ads  Info More...©2021 Twiter, Inc</p>
                 </div>

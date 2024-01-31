@@ -9,7 +9,7 @@ export default function Linknav({ icon, text, functionnav, type, way, hide }) {
         hide = "hidden"
     }
     else if (type === 7) {
-        way = '/Project_clone_Twitter/3'
+        way = '/Project_clone_Twitter/username/3'
     }
     return (
         <Link to={way} className={`m-auto desktop:m-0 ${hide} tablet:block`}>

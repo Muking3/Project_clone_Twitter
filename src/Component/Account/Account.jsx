@@ -1,20 +1,20 @@
-import { svg_certified, svg_secure } from "../Svg_icon"
-import { time } from "../Time"
+import { svgCertified, svgSecure } from "../ComponentGeneral/SvgIcon"
+import { time } from "../ComponentGeneral/Time"
 
-export function Account_img({ name_profil, access }) {
+export function AccountName({ nameProfil, access }) {
     return (
         <>
-            <span className='pr-0.5 font-bold'>{name_profil}</span>
-            {access && access !== "secure" && svg_certified}
-            {access === "secure" && svg_secure}
+            <span className='pr-0.5 font-bold'>{nameProfil}</span>
+            {access && access !== "secure" && svgCertified}
+            {access === "secure" && svgSecure}
         </>
     )
 }
 
-export function Account_src({ id_profil, classe, date, access }) {
+export function AccountSrc({ idProfil, classe, access }) {
     return (
         <div className="flex text-gray-trend">
-            <span className={classe}>@{id_profil}</span>
+            <span className={classe}>@{idProfil}</span>
             {access &&
                 <div>
                     <span className='px-1'>.</span>
