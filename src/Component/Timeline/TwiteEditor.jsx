@@ -1,4 +1,4 @@
-export default function Twite_editor({ icon, type, handleFunction }) {
+export default function TwiteEditor({ icon, type, handleFunction }) {
     let pass = ""
     if (type === 0) {
         pass = "input_img"
@@ -6,7 +6,7 @@ export default function Twite_editor({ icon, type, handleFunction }) {
     return (
         <>
             <label htmlFor={pass} className="cursor-pointer">{icon}</label>
-            <input type="file" id="input_img" accept="image/*" onChange={handleFunction} className="hidden"/>
+            <input type="file" id="input_img" accept="image/*" onChange={handleFunction} className="hidden" />
         </>
     )
 }

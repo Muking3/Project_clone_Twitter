@@ -1,4 +1,4 @@
-import { svg_more_btn } from "../Svg_icon"
+import { svgMoreBtn } from "../ComponentGeneral/SvgIcon"
 
 export default function Trendsliste() {
     return (
@@ -9,7 +9,7 @@ export default function Trendsliste() {
                     <p className='text-tweet font-bold'>#SQUID</p>
                     <p className='text-tw'>2,066 Tweets</p>
                 </div>
-                <div className='pr-4'>{svg_more_btn}</div>
+                <div className='pr-4'>{svgMoreBtn}</div>
             </div>
         </>
     )

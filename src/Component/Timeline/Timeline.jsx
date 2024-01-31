@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
-import Button from "../Button"
-import { svg_stars, svg_timeline } from "../Svg_icon"
+import Button from "../ComponentGeneral/Button"
+import { svgStars, svgTimeline } from "../ComponentGeneral/SvgIcon"
 import Tweet from "../Tweet/Tweet"
-import Twite_editor from "./Twite_editor"
+import TwiteEditor from "./TwiteEditor"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { TweetContext } from "../../App"
@@ -10,12 +10,12 @@ import { TweetContext } from "../../App"
 export default function Timeline() {
     const { profil } = useContext(TweetContext);
     const [users, setUsers] = useState({})
-    const find_user = profil.find(x => x.id === 3)
+    const findUser = profil.find(x => x.id === 3)
     useEffect(() => {
-        setUsers(find_user)
+        setUsers(findUser)
     }, [])
     const { restweet, setRestweet } = useContext(TweetContext);
-    const [ids, setIds] = useState({})
+    const [ids, setIds] = useState(0)
     const [valuetext, setValuetext] = useState()
     const [src, setSrc] = useState()
     const handleFunction = (e) => {
@@ -27,11 +27,11 @@ export default function Timeline() {
         }
     }
     function handleTweet(e) {
-        const value_textarea = e.target.value.trim()
-        value_textarea.length === 0 || value_textarea.length > 100 ? setValuetext() : setValuetext(e.target.value)
+        const valueTextarea = e.target.value.trim()
+        valueTextarea.length === 0 || valueTextarea.length > 100 ? setValuetext() : setValuetext(e.target.value)
     }
     const handlePost = () => {
-        const text_write = {
+        const textWrite = {
             "userId": 3,
             "id": `S${ids}`,
             "title": "Samantha",
@@ -43,7 +43,7 @@ export default function Timeline() {
         }
         if (valuetext || src) {
             try {
-                axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", text_write)
+                axios.post("https://my-json-server.typicode.com/amare53/twiterdb/posts", textWrite)
                     .then(res => { setRestweet([res.data, ...restweet]) })
             } catch (error) {
                 console.error('Erreur lors de la requête POST :', error);
@@ -58,7 +58,7 @@ export default function Timeline() {
             <div className="tablet:sticky tablet:top-0">
                 <div className='flex-between border-box px-4 py-3 bg-black'>
                     <p className='font-bold text-xl'>Home</p>
-                    <div className='flex-items-center'>{svg_stars}</div>
+                    <div className='flex-items-center'>{svgStars}</div>
                 </div>
             </div>
             <div className='border-box px-4 py-3'>
@@ -73,7 +73,7 @@ export default function Timeline() {
                         <div className='flex-between items-center'>
                             <div className='flex gap-3.5'>
                                 {
-                                    svg_timeline.map(editor => <Twite_editor key={editor.id} icon={editor.icon} type={editor.id} handleFunction={handleFunction} />)
+                                    svgTimeline.map(editor => <TwiteEditor key={editor.id} icon={editor.icon} type={editor.id} handleFunction={handleFunction} />)
                                 }
                             </div>
                             <Button width="w-20" height="h-9" fontsize="text-tweet"
@@ -83,7 +83,7 @@ export default function Timeline() {
                 </div>
             </div>
             <ul>{
-                restweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} src_imgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
+                restweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} srcImgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
             }</ul>
         </div>
     )
