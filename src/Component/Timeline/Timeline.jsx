@@ -8,7 +8,7 @@ import axios from "axios"
 import { TweetContext } from "../../App"
 
 export default function Timeline() {
-    const { profil } = useContext(TweetContext);
+    const { profil, comment } = useContext(TweetContext);
     const [users, setUsers] = useState({})
     const findUser = profil.find(x => x.id === 3)
     useEffect(() => {
@@ -39,7 +39,8 @@ export default function Timeline() {
             "url": src,
             "thumbnailUrl": users.profil,
             "like": 999,
-            "repost": 3,
+            "repost": 1000,
+            "replies":comment,
         }
         if (valuetext || src) {
             try {
@@ -83,7 +84,8 @@ export default function Timeline() {
                 </div>
             </div>
             <ul>{
-                restweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} srcImgpst={tweet.url} repost={tweet.repost} favorite={tweet.like} />)
+                restweet.map(tweet => <Tweet key={tweet.id} userId={tweet.userId} text={tweet.body} srcImgpst={tweet.url} 
+                    repost={tweet.repost} replie={tweet.replies} favorite={tweet.like} />)
             }</ul>
         </div>
     )
