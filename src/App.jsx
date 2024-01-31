@@ -1,38 +1,25 @@
 import { createContext, useEffect, useState } from 'react'
 import './App.css'
 import Trends from './Component/Trends/Trends'
-import axios from "axios"
 import Sidebar from './Component/Sidebar/Sidebar'
 import Loading from './Component/ComponentGeneral/Loading'
+import { fetchData } from './Component/ComponentGeneral/CallAPI'
 
 export const TweetContext = createContext()
 
 export default function App() {
   const [restweet, setRestweet] = useState([])
   const [profil, setProfil] = useState([])
+  const [comment, setComment] = useState([])
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [tweetsRes, profileRes] = await Promise.all([
-          axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts/"),
-          axios.get("https://my-json-server.typicode.com/amare53/twiterdb/users")
-        ]);
-
-        setRestweet(tweetsRes.data);
-        setProfil(profileRes.data);
-      } catch (error) {
-        console.error("Problème de connexion", error);
-      }
-    };
-
-    fetchData();
+    fetchData({ setRestweet, setProfil, setComment });
   }, []);
   if (profil.length === 0) {
     return (<Loading />)
   }
   return (
     <>
-      <TweetContext.Provider value={{ restweet, setRestweet, profil, setProfil }}>
+      <TweetContext.Provider value={{ restweet, setRestweet, profil, setProfil, comment, setComment }}>
         <div className='flex flex-col tablet:flex-row max-w-[1265px] h-vh m-auto'>
           <Sidebar />
           <Trends />
