@@ -8,5 +8,6 @@ export function Follow({ num, text }) {
 }
 
 export function EditProfil({ names }) {
-    return <input type="text" name={names} className="bg-black outline-placeholder border border-gray-border w-[99%] h-10 mb-4" placeholder={names} />
+    return <input type="text" name={names} className="bg-black outline-placeholder border border-gray-border w-[99%] h-10 mb-4" 
+    placeholder={names} minLength={5} maxLength={15} required/>
 }
