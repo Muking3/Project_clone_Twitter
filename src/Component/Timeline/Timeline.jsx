@@ -63,7 +63,7 @@ export default function Timeline() {
             </div>
             <div className='border-box px-4 py-3'>
                 <div className='flex gap-4%'>
-                    <Link to="/Project_clone_Twitter/3" className="w-8%">
+                    <Link to="/Project_clone_Twitter/username/3" className="w-8%">
                         <img src={users.profil} alt="Photo" className='rounded-full w-full h-auto' />
                     </Link>
                     <div className="w-88%">
